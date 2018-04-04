@@ -18,7 +18,7 @@ def user_random():
         try:
             i = int(input("--> "))
             # check if i is unique and has a value from 1 to 59
-            # and is an integer, otherwise don't append
+            # and is an integer, otherwise don't append1
             if (i not in ui) and (1 <= i <= 59) and type(i) == type(7):
                 ui.append(i)
         except:
@@ -42,11 +42,13 @@ match3 = 0
 match4 = 0
 match5 = 0
 match6 = 0
-print
+
 # the computer picks the numbers for each ticket sold
 tickets_sold = 14000000
+print("Selected numbers: 1, 2, 3, 4, 5, 6")
 print ("Just a moment ...")
 stat = 0
+
 for k in range(tickets_sold):
     comp_list = computer_random()
     matches = match_lists(comp_list, user_list)
@@ -60,10 +62,9 @@ for k in range(tickets_sold):
         match6 += 1
     # optional progress indicator
     if k % 140000 == 0:
-        print( str(stat) + "% Completed", flush=True)
+        print(str(stat) + "% Completed")
         stat = stat + 1
 
-          
 print("100% Completed")
 print()
 print("Out of %d tickets sold the computer found these matches:" % tickets_sold)
