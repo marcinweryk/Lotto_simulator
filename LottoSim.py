@@ -6,7 +6,6 @@ import time
 def computer_random():
     """let the computer create a list of 6 unique random integers from 1 to 59"""
     ci = random.sample(range(1, 59), 6)
-    # print("Computer draw", ci)
     return ci
 
 
@@ -56,4 +55,5 @@ for x in range(1,60):
     result_list.append(match3draw())
     #print(match3draw())
 
+#average of the draws required to match 3 with user lucky dip
 print(sum(result_list)/len(result_list))
