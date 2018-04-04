@@ -51,14 +51,5 @@ def match3draw():
             print("Computer numbers: {} on the draw number: {}".format(comp_list,stat))
     return stat
 
-# the user picks the 6 winning numbers
-# user_list = user_random()
-# print ("Selected numbers:", user_list)
-# set up counters for 3 to 6 matches
-match3 = 0
-match4 = 0
-match5 = 0
-match6 = 0
-
 print(match3draw())
 
