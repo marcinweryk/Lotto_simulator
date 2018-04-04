@@ -61,26 +61,3 @@ while match3 == 0:
         match3 = 1
         print("3 matched after {} of draws".format(stat))
 
-# for k in range(tickets_sold):
-# comp_list = computer_random()
-# matches = match_lists(comp_list, user_list)
-# if matches == 3:
-# match3 += 1
-# elif matches == 4:
-# match4 += 1
-# elif matches == 5:
-# match5 += 1
-# elif matches == 6:
-# match6 += 1
-# optional progress indicator
-# if k % 140000 == 0:
-# print(str(stat) + "% Completed")
-# stat = stat + 1
-
-# print("100% Completed")
-# print()
-# print("Out of %d tickets sold the computer found these matches:" % tickets_sold)
-# print("3 matches = %d" % match3)
-# print("4 matches = %d" % match4)
-# print("5 matches = %d" % match5)
-# print("6 matches = %d" % match6)

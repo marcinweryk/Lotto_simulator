@@ -45,7 +45,6 @@ match6 = 0
 
 # the computer picks the numbers for each ticket sold
 tickets_sold = 14000000
-print("Selected numbers: 1, 2, 3, 4, 5, 6")
 print ("Just a moment ...")
 stat = 0
 
@@ -63,7 +62,7 @@ for k in range(tickets_sold):
     # optional progress indicator
     if k % 140000 == 0:
         print(str(stat) + "% Completed")
-        stat = stat + 1
+        stat += 1
 
 print("100% Completed")
 print()
