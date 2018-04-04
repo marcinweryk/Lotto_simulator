@@ -40,7 +40,7 @@ def match3draw():
     match3 = 0
     stat = 0
     user_list = computer_random()
-    print("User numbers {}".format(user_list))
+    #print("User numbers {}".format(user_list))
     while match3 == 0:
         comp_list = computer_random()
         #print("Draw number:{} - Computer numbers: {}".format(stat,comp_list))
@@ -48,8 +48,12 @@ def match3draw():
         stat += 1
         if matches == 3:
             match3 = 1
-            print("Computer numbers: {} on the draw number: {}".format(comp_list,stat))
+            #print("Computer numbers: {} on the draw number: {}".format(comp_list,stat))
     return stat
 
-print(match3draw())
+result_list = []
+for x in range(1,60):
+    result_list.append(match3draw())
+    #print(match3draw())
 
+print(sum(result_list)/len(result_list))
