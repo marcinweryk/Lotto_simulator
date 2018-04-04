@@ -21,6 +21,8 @@ def user_random():
             # and is an integer, otherwise don't append1
             if (i not in ui) and (1 <= i <= 59) and type(i) == type(7):
                 ui.append(i)
+            else:
+                print("Wrong number or number already used!")
         except:
             print("Enter an integer number!")
     return ui
@@ -35,25 +37,26 @@ def match_lists(list1, list2):
     # return number of matching items
     return len(set3)
 
-def match3draw():
-    match3 = 0
+# TO DO the calculation for 5 and 6 matches taking long time and some progress indicator should be prepared or some limitation shoudl be implemented.
+# TO DO For 6 matches check user should be aware about the time that this will take.
+# TO DO make sure no other numbers that are not 3,4,5,6 can be used for this
+def match3draw(usernumbers,matchno):
+    match = 0
     stat = 0
-    user_list = computer_random()
+    user_list = usernumbers
     #print("User numbers {}".format(user_list))
-    while match3 == 0:
+    while match == 0:
         comp_list = computer_random()
         #print("Draw number:{} - Computer numbers: {}".format(stat,comp_list))
         matches = match_lists(comp_list, user_list)
         stat += 1
-        if matches == 3:
-            match3 = 1
-            #print("Computer numbers: {} on the draw number: {}".format(comp_list,stat))
+        if matches == matchno:
+            match = 1
     return stat
 
 result_list = []
 for x in range(1,60):
-    result_list.append(match3draw())
-    #print(match3draw())
+    result_list.append(match3draw(computer_random(),5))
 
 #average of the draws required to match 3 with user lucky dip
 print(sum(result_list)/len(result_list))
