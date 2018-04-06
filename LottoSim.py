@@ -37,26 +37,32 @@ def match_lists(list1, list2):
     # return number of matching items
     return len(set3)
 
+
 # TO DO the calculation for 5 and 6 matches taking long time and some progress indicator should be prepared or some limitation shoudl be implemented.
 # TO DO For 6 matches check user should be aware about the time that this will take.
 # TO DO make sure no other numbers that are not 3,4,5,6 can be used for this
-def match3draw(usernumbers,matchno):
+# user numbers and number of matches are required to calculate the number of draws for usernumbers to reach the required match
+def matchdraw(usernumbers, matchno):
     match = 0
     stat = 0
     user_list = usernumbers
-    #print("User numbers {}".format(user_list))
+    # print("User numbers {}".format(user_list))
     while match == 0:
         comp_list = computer_random()
-        #print("Draw number:{} - Computer numbers: {}".format(stat,comp_list))
+        #print('.', sep=' ', end= '', flush=True),
+        print('Draw no {} '.format(stat))
+        # print("Draw number:{} - Computer numbers: {}".format(stat,comp_list))
         matches = match_lists(comp_list, user_list)
         stat += 1
         if matches == matchno:
             match = 1
     return stat
 
-result_list = []
-for x in range(1,60):
-    result_list.append(match3draw(computer_random(),5))
 
-#average of the draws required to match 3 with user lucky dip
-print(sum(result_list)/len(result_list))
+print(matchdraw(computer_random(),6))
+#result_list = []
+#for x in range(1, 60):
+    #result_list.append(match3draw(computer_random(), 4))
+
+# average of the draws required to match 3 with user lucky dip
+#print(sum(result_list) / len(result_list))
