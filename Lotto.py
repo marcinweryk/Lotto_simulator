@@ -5,7 +5,7 @@ import time
 
 def computer_random():
     """let the computer create a list of 6 unique random integers from 1 to 59"""
-    ci = random.sample(range(1, 59), 6)
+    ci = random.sample(range(1, 60), 6)
     #print("Computer draw", ci)
     return ci
     
@@ -44,7 +44,7 @@ match5 = 0
 match6 = 0
 
 # the computer picks the numbers for each ticket sold
-tickets_sold = 14000000
+tickets_sold = 100
 print ("Just a moment ...")
 stat = 0
 

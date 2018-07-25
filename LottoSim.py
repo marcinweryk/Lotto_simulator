@@ -5,7 +5,7 @@ import time
 
 def computer_random():
     """let the computer create a list of 6 unique random integers from 1 to 59"""
-    ci = random.sample(range(1, 59), 6)
+    ci = random.sample(range(1, 60), 6)
     return ci
 
 
@@ -37,29 +37,24 @@ def match_lists(list1, list2):
     # return number of matching items
     return len(set3)
 
-
-# TO DO the calculation for 5 and 6 matches taking long time and some progress indicator should be prepared or some limitation shoudl be implemented.
-# TO DO For 6 matches check user should be aware about the time that this will take.
 # TO DO make sure no other numbers that are not 3,4,5,6 can be used for this
 # user numbers and number of matches are required to calculate the number of draws for usernumbers to reach the required match
 def matchdraw(usernumbers, matchno):
+    """User numbers should be in form of a list. matchno - int between 3 and 6"""
     match = 0
     stat = 0
     user_list = usernumbers
-    # print("User numbers {}".format(user_list))
     while match == 0:
         comp_list = computer_random()
-        #print('.', sep=' ', end= '', flush=True),
         print('Draw no {} '.format(stat))
-        # print("Draw number:{} - Computer numbers: {}".format(stat,comp_list))
         matches = match_lists(comp_list, user_list)
         stat += 1
         if matches == matchno:
             match = 1
-    return stat
+    return ('Your numbers {} has been matched after: {} draws'.format(user_list,stat))
 
 
-print(matchdraw(computer_random(),6))
+print(matchdraw(computer_random(),3))
 #result_list = []
 #for x in range(1, 60):
     #result_list.append(match3draw(computer_random(), 4))
